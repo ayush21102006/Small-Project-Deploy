@@ -1,0 +1,139 @@
+/* Reset and base */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+body { font-family: Arial, Helvetica, sans-serif; background-color: #000; color: #fff; line-height: 1.6; }
+
+/* Global responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Make logo svg responsive */
+.navbar svg {
+  height: auto;
+  width: clamp(100px, 22vw, 160px);
+}
+
+/* Actions */
+.top-icon button {
+  margin-left: 10px;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.Language { background-color: transparent; border-color: #fff; color: #fff; }
+.signin { background-color: #e50914; color: #fff; font-weight: bold; border: none; }
+
+/* Hero */
+.hero {
+  background: url('hero-bg.jpg') center/cover no-repeat;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+.hero h1 { font-size: clamp(1.8rem, 4vw, 3rem); margin-bottom: 20px; }
+.hero h2 { font-size: clamp(1rem, 2.5vw, 1.5rem); margin-bottom: 20px; }
+.hero p { margin-bottom: 20px; }
+.email-box { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+.email-box input {
+  padding: 12px;
+  width: min(100%, 360px);
+  border: none; border-radius: 4px;
+}
+.email-box button {
+  background-color: #e50914; color: #fff; border: none;
+  padding: 12px 20px; border-radius: 4px; cursor: pointer;
+}
+
+/* Trending */
+.section { padding: 40px 20px; }
+.TN { font-size: 1.5rem; margin-bottom: 16px; }
+
+.Trending {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+/* Make thumbnails uniform without distortion */
+.Trending img {
+  width: 100%;
+  aspect-ratio: 2 / 3;          /* common poster ratio */
+  object-fit: cover;             /* keep crop tight */
+  border-radius: 8px;
+  background-color: #111;        /* fallback if image fails */
+}
+
+/* Cards */
+.reasons { padding: 40px 20px; background-color: #111; }
+.MR { font-size: 1.5rem; margin-bottom: 16px; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: #1f1f1f;
+  padding: 20px;
+  border-radius: 8px;
+}
+.card h3 { margin-bottom: 8px; font-size: 1.1rem; }
+.card p { color: #ccc; }
+
+/* Icon images responsive but controlled */
+.card .icon img {
+  width: clamp(40px, 12vw, 72px);
+  height: auto;
+}
+
+/* FAQ */
+.HF { font-size: 1.5rem; padding: 20px; }
+.faq { padding: 0 20px 40px; }
+details {
+  background-color: #1f1f1f;
+  margin-bottom: 10px;
+  padding: 12px;
+  border-radius: 6px;
+}
+summary { cursor: pointer; font-weight: bold; }
+.answer { margin-top: 10px; color: #ccc; }
+
+/* Footer */
+.footer { background-color: #111; padding: 40px 20px; color: #ccc; }
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+}
+.footer-grid a { color: #ccc; text-decoration: none; margin-bottom: 8px; display: block; }
+.footer-grid a:hover { text-decoration: underline; }
+.footer h3 { margin-top: 20px; color: #fff; }
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .navbar { padding: 12px 16px; }
+  .top-icon button { padding: 6px 12px; }
+  .Trending { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; }
+}
+
+@media (max-width: 480px) {
+  .Trending { grid-template-columns: repeat(3, 1fr); }
+  .TN, .MR, .HF { font-size: 1.25rem; }
+}
